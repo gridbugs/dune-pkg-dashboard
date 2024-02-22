@@ -19,11 +19,11 @@ jobs:
     needs: list-deps
     strategy:
       matrix:
+        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
         os:
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
-        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
 
     runs-on: ${{ matrix.os }}
 
@@ -39,7 +39,6 @@ jobs:
           git clone https://github.com/ocaml/dune.git
           cd dune
           opam install .
-          which dune
       - name: Lock Project
         run: |
           cd bonsai-deps/${{ matrix.package}}
