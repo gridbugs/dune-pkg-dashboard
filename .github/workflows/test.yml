@@ -18,14 +18,13 @@ jobs:
   build:
     needs: list-deps
     strategy:
+      fail-fast: false
       matrix:
         package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
         os:
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
-
-    fail-fast: false
 
     runs-on: ${{ matrix.os }}
 
