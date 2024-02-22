@@ -35,7 +35,7 @@ jobs:
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
       - run: |
-          git clone git@github.com:ocaml/dune.git
+          git clone https://github.com/ocaml/dune.git
           cd dune
           opam install . --deps-only
           dune build bin/main.exe
