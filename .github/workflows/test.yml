@@ -2,7 +2,16 @@ name: test
 on:
   - push
 jobs:
+  list-deps:
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.set-packages.outputs.packages }}
+    steps:
+      - id: set-packages
+        run: echo "packages=$(./ls-json.sh bonsai-deps)" >> $GITHUB_OUTPUT
+
   build:
+    needs: list-deps
     strategy:
       matrix:
         os:
@@ -10,14 +19,16 @@ jobs:
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
+        package: ${{ fromJSON(needs.list-deps.outputs.packages }}
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout tree
         uses: actions/checkout@v4
-      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
-        uses: ocaml/setup-ocaml@v2
-        with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
-      - run: opam --help
+      - run: echo hello ${{ matrix.package }}
+      #      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
+      #        uses: ocaml/setup-ocaml@v2
+      #        with:
+      #          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+      #      - run: opam --help
