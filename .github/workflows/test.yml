@@ -20,19 +20,22 @@ jobs:
     strategy:
       matrix:
         os:
-          - macos-latest
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
-        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
+            #        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout tree
         uses: actions/checkout@v4
-      #      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
-      #        uses: ocaml/setup-ocaml@v2
-      #        with:
-      #          ocaml-compiler: ${{ matrix.ocaml-compiler }}
-      #      - run: opam --help
+      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+      - run: |
+          git clone git@github.com:ocaml/dune.git
+          cd dune
+          opam install . --deps-only
+          dune build bin/main.exe
