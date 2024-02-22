@@ -10,7 +10,7 @@ jobs:
       - id: set-packages
         run: |
           echo "matrix<<END" >> ${GITHUB_OUTPUT}
-          echo "{\"package\":[\"foo\", \"bar\"]}" >> ${GITHUB_OUTPUT}
+          echo "[\"foo\", \"bar\"]" >> ${GITHUB_OUTPUT}
           echo "END" >> ${GITHUB_OUTPUT}
 
      #run: echo "packages={\"foo\":[\"re\",\"seq\"]}" >> $GITHUB_OUTPUT
@@ -19,7 +19,7 @@ jobs:
     needs: list-deps
     strategy:
       matrix:
-        package: ${{ fromJSON(needs.list-deps.outputs.packages).package }}
+        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
 
 
         #runs-on: ${{ matrix.os }}
