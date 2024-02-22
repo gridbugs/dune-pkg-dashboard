@@ -5,10 +5,15 @@ jobs:
   list-deps:
     runs-on: ubuntu-latest
     outputs:
-      packages: ${{ steps.set-packages.outputs.packages }}
+      packages: ${{ steps.set-packages.outputs.matrix }}
     steps:
       - id: set-packages
-        run: echo "packages={\"foo\":[\"re\",\"seq\"]}" >> $GITHUB_OUTPUT
+        run: |
+          echo "matrix<<END" >> ${GITHUB_OUTPUT}
+          echo "{\"include\":[\"foo\", \"bar\"]}" >> ${GITHUB_OUTPUT}
+          echo "END" >> ${GITHUB_OUTPUT}
+
+     #run: echo "packages={\"foo\":[\"re\",\"seq\"]}" >> $GITHUB_OUTPUT
 
   build:
     needs: list-deps
@@ -19,7 +24,7 @@ jobs:
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
-        package: ${{ fromJSON(needs.list-deps.outputs.packages.foo) }}
+        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
 
 
     runs-on: ${{ matrix.os }}
