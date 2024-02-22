@@ -37,5 +37,4 @@ jobs:
       - run: |
           git clone https://github.com/ocaml/dune.git
           cd dune
-          opam install . --deps-only
-          dune build bin/main.exe
+          opam install .
