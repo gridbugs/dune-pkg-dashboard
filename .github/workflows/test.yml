@@ -25,6 +25,8 @@ jobs:
         ocaml-compiler:
           - "5.1"
 
+    fail-fast: false
+
     runs-on: ${{ matrix.os }}
 
     steps:
