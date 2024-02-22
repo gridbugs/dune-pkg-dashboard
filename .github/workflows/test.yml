@@ -10,7 +10,7 @@ jobs:
       - id: set-packages
         run: |
           echo "matrix<<END" >> ${GITHUB_OUTPUT}
-          echo "{\"include\":[\"foo\", \"bar\"]}" >> ${GITHUB_OUTPUT}
+          echo "{\"package\":[\"foo\", \"bar\"]}" >> ${GITHUB_OUTPUT}
           echo "END" >> ${GITHUB_OUTPUT}
 
      #run: echo "packages={\"foo\":[\"re\",\"seq\"]}" >> $GITHUB_OUTPUT
@@ -18,16 +18,11 @@ jobs:
   build:
     needs: list-deps
     strategy:
-      matrix:
-        os:
-          - macos-latest
-          - ubuntu-latest
-        ocaml-compiler:
-          - "5.1"
-        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
+      matrix: ${{ fromJSON(needs.list-deps.outputs.packages) }}
 
 
-    runs-on: ${{ matrix.os }}
+        #runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout tree
