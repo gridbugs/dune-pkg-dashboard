@@ -18,7 +18,8 @@ jobs:
   build:
     needs: list-deps
     strategy:
-      matrix: ${{ fromJSON(needs.list-deps.outputs.packages) }}
+      matrix:
+        package: ${{ fromJSON(needs.list-deps.outputs.packages).package }}
 
 
         #runs-on: ${{ matrix.os }}
