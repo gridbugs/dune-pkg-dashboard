@@ -23,18 +23,28 @@ jobs:
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
-            #        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
+        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
 
     runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Checkout tree
+      - name: Checkout Tree
         uses: actions/checkout@v4
       - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
         uses: ocaml/setup-ocaml@v2
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
-      - run: |
+      - name: Build Dune
+        run: |
           git clone https://github.com/ocaml/dune.git
           cd dune
           opam install .
+          which dune
+      - name: Lock Project
+        run: |
+          cd bonsai-deps/${{ matrix.package}}
+          dune pkg lock
+      - name: Build Project
+        run: |
+          cd bonsai-deps/${{ matrix.package}}
+          dune build
