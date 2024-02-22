@@ -8,7 +8,7 @@ jobs:
       packages: ${{ steps.set-packages.outputs.packages }}
     steps:
       - id: set-packages
-        run: echo "packages={foo:[\"re\",\"seq\"]}" >> $GITHUB_OUTPUT
+        run: echo "packages={\"foo\":[\"re\",\"seq\"]}" >> $GITHUB_OUTPUT
 
   build:
     needs: list-deps
@@ -20,6 +20,7 @@ jobs:
         ocaml-compiler:
           - "5.1"
         package: ${{ fromJSON(needs.list-deps.outputs.packages.foo) }}
+
 
     runs-on: ${{ matrix.os }}
 
