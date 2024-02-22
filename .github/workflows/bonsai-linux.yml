@@ -1,4 +1,7 @@
-name: test
+# Github only allows up. to 256 jobs to run for an action. Bonsai has
+# sufficiently many dependencies that linux and macos can't be tested in a
+# single action.
+name: bonsai-linux
 on:
   - push
 jobs:
@@ -25,6 +28,8 @@ jobs:
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
+        dune-revision:
+          - "fb118974f04786b5801823274132016175ef3a6a"
 
     runs-on: ${{ matrix.os }}
 
@@ -39,6 +44,7 @@ jobs:
         run: |
           git clone https://github.com/ocaml/dune.git
           cd dune
+          git checkout ${{ matrix.dune-revision }}
           opam install .
       - name: Lock Project
         run: |
