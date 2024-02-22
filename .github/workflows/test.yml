@@ -19,7 +19,7 @@ jobs:
           - ubuntu-latest
         ocaml-compiler:
           - "5.1"
-        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
+        package: ${{ fromJSON(needs.list-deps.outputs.packages.foo) }}
 
     runs-on: ${{ matrix.os }}
 
