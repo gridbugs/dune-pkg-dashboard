@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_pattern_bind)
+ (allow_empty)
+ (depends (ppx_pattern_bind (= v0.16.0))))

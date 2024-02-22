@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-jane-street-headers)
+ (allow_empty)
+ (depends (jane-street-headers (= v0.16.0))))

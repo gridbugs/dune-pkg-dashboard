@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-menhir)
+ (allow_empty)
+ (depends (menhir (= 20231231))))

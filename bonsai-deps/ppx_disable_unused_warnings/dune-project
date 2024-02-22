@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_disable_unused_warnings)
+ (allow_empty)
+ (depends (ppx_disable_unused_warnings (= v0.16.0))))

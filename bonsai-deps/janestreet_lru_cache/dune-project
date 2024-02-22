@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-janestreet_lru_cache)
+ (allow_empty)
+ (depends (janestreet_lru_cache (= v0.16.1))))

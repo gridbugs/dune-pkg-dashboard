@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_stable)
+ (allow_empty)
+ (depends (ppx_stable (= v0.16.0))))

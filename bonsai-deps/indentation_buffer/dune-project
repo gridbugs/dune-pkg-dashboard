@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-indentation_buffer)
+ (allow_empty)
+ (depends (indentation_buffer (= v0.16.0))))

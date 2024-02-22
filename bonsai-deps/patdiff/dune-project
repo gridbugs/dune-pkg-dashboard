@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-patdiff)
+ (allow_empty)
+ (depends (patdiff (= v0.16.1))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-diffable)
+ (allow_empty)
+ (depends (diffable (= v0.16.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-base-unix)
+ (allow_empty)
+ (depends (base-unix (= base))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-conduit)
+ (allow_empty)
+ (depends (conduit (= 6.2.1))))

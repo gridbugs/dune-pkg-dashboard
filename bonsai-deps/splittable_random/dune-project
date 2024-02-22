@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-splittable_random)
+ (allow_empty)
+ (depends (splittable_random (= v0.16.0))))

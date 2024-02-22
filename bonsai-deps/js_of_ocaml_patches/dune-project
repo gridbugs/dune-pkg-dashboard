@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-js_of_ocaml_patches)
+ (allow_empty)
+ (depends (js_of_ocaml_patches (= v0.16.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ipaddr-sexp)
+ (allow_empty)
+ (depends (ipaddr-sexp (= 5.5.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-conf-libffi)
+ (allow_empty)
+ (depends (conf-libffi (= 2.0.0))))

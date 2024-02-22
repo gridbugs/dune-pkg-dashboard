@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ocaml-syntax-shims)
+ (allow_empty)
+ (depends (ocaml-syntax-shims (= 1.0.0))))

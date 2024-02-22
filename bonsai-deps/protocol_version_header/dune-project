@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-protocol_version_header)
+ (allow_empty)
+ (depends (protocol_version_header (= v0.16.0))))

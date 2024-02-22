@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-async_durable)
+ (allow_empty)
+ (depends (async_durable (= v0.16.0))))

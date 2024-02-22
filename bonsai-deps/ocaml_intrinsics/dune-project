@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ocaml_intrinsics)
+ (allow_empty)
+ (depends (ocaml_intrinsics (= v0.16.0))))
