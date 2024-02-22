@@ -15,22 +15,22 @@ jobs:
           ./ls-json.sh bonsai-deps >> ${GITHUB_OUTPUT}
           echo "END" >> ${GITHUB_OUTPUT}
 
-     #run: echo "packages={\"foo\":[\"re\",\"seq\"]}" >> $GITHUB_OUTPUT
-
   build:
     needs: list-deps
     strategy:
       matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+        ocaml-compiler:
+          - "5.1"
         package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
 
-
-        #runs-on: ${{ matrix.os }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout tree
         uses: actions/checkout@v4
-      - run: echo hello ${{ matrix.package }}
       #      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
       #        uses: ocaml/setup-ocaml@v2
       #        with:
