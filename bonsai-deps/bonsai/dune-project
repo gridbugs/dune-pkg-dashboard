@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-bonsai)
+ (allow_empty)
+ (depends (bonsai (= v0.16.0))))

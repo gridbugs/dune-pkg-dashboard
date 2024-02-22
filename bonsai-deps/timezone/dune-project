@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-timezone)
+ (allow_empty)
+ (depends (timezone (= v0.16.0))))

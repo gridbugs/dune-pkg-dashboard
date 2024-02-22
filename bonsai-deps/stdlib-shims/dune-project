@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-stdlib-shims)
+ (allow_empty)
+ (depends (stdlib-shims (= 0.3.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-abstract_algebra)
+ (allow_empty)
+ (depends (abstract_algebra (= v0.16.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_typerep_conv)
+ (allow_empty)
+ (depends (ppx_typerep_conv (= v0.16.0))))

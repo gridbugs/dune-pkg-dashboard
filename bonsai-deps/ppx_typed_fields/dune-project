@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_typed_fields)
+ (allow_empty)
+ (depends (ppx_typed_fields (= v0.16.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-incremental)
+ (allow_empty)
+ (depends (incremental (= v0.16.1))))

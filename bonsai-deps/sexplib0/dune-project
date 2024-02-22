@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-sexplib0)
+ (allow_empty)
+ (depends (sexplib0 (= v0.16.0))))

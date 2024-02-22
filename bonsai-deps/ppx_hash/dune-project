@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_hash)
+ (allow_empty)
+ (depends (ppx_hash (= v0.16.0))))

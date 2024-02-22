@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_compare)
+ (allow_empty)
+ (depends (ppx_compare (= v0.16.0))))

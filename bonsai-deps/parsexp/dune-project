@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-parsexp)
+ (allow_empty)
+ (depends (parsexp (= v0.16.0))))

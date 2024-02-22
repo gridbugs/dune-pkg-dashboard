@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-base_quickcheck)
+ (allow_empty)
+ (depends (base_quickcheck (= v0.16.0))))

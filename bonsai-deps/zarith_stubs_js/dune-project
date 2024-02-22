@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-zarith_stubs_js)
+ (allow_empty)
+ (depends (zarith_stubs_js (= v0.16.1))))

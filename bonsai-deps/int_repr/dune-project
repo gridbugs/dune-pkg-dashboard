@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-int_repr)
+ (allow_empty)
+ (depends (int_repr (= v0.16.0))))

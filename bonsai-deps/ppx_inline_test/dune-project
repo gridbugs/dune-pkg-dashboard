@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_inline_test)
+ (allow_empty)
+ (depends (ppx_inline_test (= v0.16.1))))

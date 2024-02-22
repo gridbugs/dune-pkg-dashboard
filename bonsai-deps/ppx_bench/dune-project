@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_bench)
+ (allow_empty)
+ (depends (ppx_bench (= v0.16.0))))

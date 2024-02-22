@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_pipebang)
+ (allow_empty)
+ (depends (ppx_pipebang (= v0.16.0))))

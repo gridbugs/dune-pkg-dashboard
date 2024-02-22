@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-expect_test_helpers_core)
+ (allow_empty)
+ (depends (expect_test_helpers_core (= v0.16.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-astring)
+ (allow_empty)
+ (depends (astring (= 0.8.5))))

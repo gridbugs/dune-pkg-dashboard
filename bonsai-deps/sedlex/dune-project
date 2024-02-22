@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-sedlex)
+ (allow_empty)
+ (depends (sedlex (= 3.2))))

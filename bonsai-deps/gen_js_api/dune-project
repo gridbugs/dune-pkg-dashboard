@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-gen_js_api)
+ (allow_empty)
+ (depends (gen_js_api (= 1.1.2))))
