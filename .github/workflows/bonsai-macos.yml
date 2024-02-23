@@ -29,7 +29,7 @@ jobs:
         ocaml-compiler:
           - "5.1"
         dune-revision:
-          - "fb118974f04786b5801823274132016175ef3a6a"
+          - "origin/main"
 
     runs-on: ${{ matrix.os }}
 
