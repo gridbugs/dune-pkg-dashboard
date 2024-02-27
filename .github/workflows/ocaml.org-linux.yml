@@ -34,6 +34,10 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
+      - name: Install system deps
+        run: |
+          sudo apt update
+          sudo apt install libcurl4-gnutls-dev # this contains the curl-config executable needed to build the "ocurl" package
       - name: Checkout Tree
         uses: actions/checkout@v4
       - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
