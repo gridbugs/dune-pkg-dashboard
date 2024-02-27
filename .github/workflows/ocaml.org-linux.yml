@@ -1,7 +1,7 @@
 # Github only allows up. to 256 jobs to run for an action. Ocaml.org has
 # sufficiently many dependencies that linux and macos can't be tested in a
 # single action.
-name: bonsai-linux
+name: ocaml.org-linux
 on:
   - push
 jobs:
@@ -15,7 +15,7 @@ jobs:
       - id: set-packages
         run: |
           echo "matrix<<END" >> ${GITHUB_OUTPUT}
-          ./ls-json.sh bonsai-deps >> ${GITHUB_OUTPUT}
+          ./ls-json.sh ocaml.org-deps >> ${GITHUB_OUTPUT}
           echo "END" >> ${GITHUB_OUTPUT}
 
   build:
@@ -48,9 +48,9 @@ jobs:
           opam install .
       - name: Lock Project
         run: |
-          cd bonsai-deps/${{ matrix.package}}
+          cd ocaml.org-deps/${{ matrix.package}}
           opam exec -- dune pkg lock
       - name: Build Project
         run: |
-          cd bonsai-deps/${{ matrix.package}}
+          cd ocaml.org-deps/${{ matrix.package}}
           opam exec -- dune build
