@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-omd)
+ (allow_empty)
+ (depends (omd (= 2.0.0~alpha4))))

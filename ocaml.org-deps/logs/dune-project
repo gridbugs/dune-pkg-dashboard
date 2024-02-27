@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-logs)
+ (allow_empty)
+ (depends (logs (= 0.7.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-angstrom)
+ (allow_empty)
+ (depends (angstrom (= 0.16.0))))

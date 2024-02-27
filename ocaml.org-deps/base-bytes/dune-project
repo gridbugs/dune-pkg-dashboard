@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-base-bytes)
+ (allow_empty)
+ (depends (base-bytes (= base))))

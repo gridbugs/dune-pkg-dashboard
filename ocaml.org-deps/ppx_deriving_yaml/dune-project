@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ppx_deriving_yaml)
+ (allow_empty)
+ (depends (ppx_deriving_yaml (= 0.2.2))))

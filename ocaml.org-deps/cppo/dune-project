@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-cppo)
+ (allow_empty)
+ (depends (cppo (= 1.6.9))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-crunch)
+ (allow_empty)
+ (depends (crunch (= 3.3.1))))

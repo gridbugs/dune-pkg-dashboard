@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-bigarray-overlap)
+ (allow_empty)
+ (depends (bigarray-overlap (= 0.2.1))))

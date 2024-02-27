@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-graphql-lwt)
+ (allow_empty)
+ (depends (graphql-lwt (= 0.14.0))))

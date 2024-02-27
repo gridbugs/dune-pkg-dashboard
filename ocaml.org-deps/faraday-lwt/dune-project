@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-faraday-lwt)
+ (allow_empty)
+ (depends (faraday-lwt (= 0.8.2))))

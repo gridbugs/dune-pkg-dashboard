@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-mirage-crypto-ec)
+ (allow_empty)
+ (depends (mirage-crypto-ec (= 0.11.2))))

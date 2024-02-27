@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-hmap)
+ (allow_empty)
+ (depends (hmap (= 0.8.1))))

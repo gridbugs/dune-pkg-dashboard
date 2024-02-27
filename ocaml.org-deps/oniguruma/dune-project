@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-oniguruma)
+ (allow_empty)
+ (depends (oniguruma (= 0.1.2))))

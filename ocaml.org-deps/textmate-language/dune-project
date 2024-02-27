@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-textmate-language)
+ (allow_empty)
+ (depends (textmate-language (= 0.4.0))))

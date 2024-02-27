@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-uucp)
+ (allow_empty)
+ (depends (uucp (= 15.1.0))))

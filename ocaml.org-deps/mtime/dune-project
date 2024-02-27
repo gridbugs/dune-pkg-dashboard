@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-mtime)
+ (allow_empty)
+ (depends (mtime (= 2.0.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ezcurl-lwt)
+ (allow_empty)
+ (depends (ezcurl-lwt (= 0.2.4))))
