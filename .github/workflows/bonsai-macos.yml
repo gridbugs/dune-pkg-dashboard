@@ -29,7 +29,7 @@ jobs:
         ocaml-compiler:
           - "5.1"
         dune-revision:
-          - "origin/main"
+          - "origin/fixes-2024-02-27"
 
     runs-on: ${{ matrix.os }}
 
@@ -42,7 +42,7 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
       - name: Build Dune
         run: |
-          git clone https://github.com/ocaml/dune.git
+          git clone https://github.com/github/dune.git
           cd dune
           git checkout ${{ matrix.dune-revision }}
           opam install .
