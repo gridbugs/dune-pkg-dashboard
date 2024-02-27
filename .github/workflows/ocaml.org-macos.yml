@@ -1,0 +1,56 @@
+# Github only allows up. to 256 jobs to run for an action. Ocaml.org has
+# sufficiently many dependencies that linux and macos can't be tested in a
+# single action.
+name: ocaml.org-macos
+on:
+  - push
+jobs:
+  list-deps:
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.set-packages.outputs.matrix }}
+    steps:
+      - name: Checkout tree
+        uses: actions/checkout@v4
+      - id: set-packages
+        run: |
+          echo "matrix<<END" >> ${GITHUB_OUTPUT}
+          ./ls-json.sh ocaml.org-deps >> ${GITHUB_OUTPUT}
+          echo "END" >> ${GITHUB_OUTPUT}
+
+  build:
+    needs: list-deps
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJSON(needs.list-deps.outputs.packages) }}
+        os:
+          - macOS-latest
+        ocaml-compiler:
+          - "5.1"
+        dune-revision:
+          - "origin/main"
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout Tree
+        uses: actions/checkout@v4
+      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+      - name: Build Dune
+        run: |
+          git clone https://github.com/ocaml/dune.git
+          cd dune
+          git checkout ${{ matrix.dune-revision }}
+          opam install .
+      - name: Lock Project
+        run: |
+          cd ocaml.org-deps/${{ matrix.package}}
+          opam exec -- dune pkg lock
+      - name: Build Project
+        run: |
+          cd ocaml.org-deps/${{ matrix.package}}
+          opam exec -- dune build

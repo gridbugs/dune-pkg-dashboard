@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-river)
+ (allow_empty)
+ (depends (river (= 0.3))))

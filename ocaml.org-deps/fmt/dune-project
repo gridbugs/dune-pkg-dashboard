@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-fmt)
+ (allow_empty)
+ (depends (fmt (= 0.9.0))))

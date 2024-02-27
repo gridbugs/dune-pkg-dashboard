@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-duration)
+ (allow_empty)
+ (depends (duration (= 0.2.1))))

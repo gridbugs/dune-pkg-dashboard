@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-menhirCST)
+ (allow_empty)
+ (depends (menhirCST (= 20231231))))

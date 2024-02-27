@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-graphql)
+ (allow_empty)
+ (depends (graphql (= 0.14.0))))

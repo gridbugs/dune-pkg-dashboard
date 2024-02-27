@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-swhid_core)
+ (allow_empty)
+ (depends (swhid_core (= 0.1))))

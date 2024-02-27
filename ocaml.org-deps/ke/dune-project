@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-ke)
+ (allow_empty)
+ (depends (ke (= 0.6))))

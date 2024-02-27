@@ -1,0 +1,40 @@
+(version 1.9.6)
+
+(install
+ (progn
+  (run %{make} install)
+  (when
+   %{pkg:ocaml:preinstalled}
+   (run install -m 0755 ocaml-stub %{bin}/ocaml))))
+
+(build
+ (progn
+  (patch 0001-Harden-test-for-OCaml-5.patch)
+  (run
+   ./configure
+   -bindir
+   %{bin}
+   -sitelib
+   %{lib}
+   -mandir
+   %{man}
+   -config
+   %{lib}/findlib.conf
+   -no-custom
+   (when
+    (and_absorb_undefined_var
+     (not %{pkg:ocaml:preinstalled})
+     (>= %{pkg:ocaml:version} 4.02.0))
+    -no-camlp4)
+   (when %{pkg:ocaml:preinstalled} -no-topfind))
+  (run %{make} all)
+  (when
+   %{pkg:ocaml:native}
+   (run %{make} opt))))
+
+(depends ocaml)
+
+(source
+ (fetch
+  (url http://download.camlcity.org/download/findlib-1.9.6.tar.gz)
+  (checksum md5=96c6ee50a32cca9ca277321262dbec57)))

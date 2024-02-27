@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-alcotest)
+ (allow_empty)
+ (depends (alcotest (= 1.7.0))))

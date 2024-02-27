@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-opam-format)
+ (allow_empty)
+ (depends (opam-format (= 2.2.0~beta1))))

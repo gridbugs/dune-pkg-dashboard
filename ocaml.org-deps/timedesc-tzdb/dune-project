@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-timedesc-tzdb)
+ (allow_empty)
+ (depends (timedesc-tzdb (= 3.0.0))))

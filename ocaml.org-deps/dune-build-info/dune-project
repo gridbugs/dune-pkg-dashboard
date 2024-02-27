@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-dune-build-info)
+ (allow_empty)
+ (depends (dune-build-info (= 3.14.0))))

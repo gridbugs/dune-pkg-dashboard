@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-cstruct)
+ (allow_empty)
+ (depends (cstruct (= 6.2.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-stdcompat)
+ (allow_empty)
+ (depends (stdcompat (= 19))))

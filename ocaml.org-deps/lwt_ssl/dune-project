@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-lwt_ssl)
+ (allow_empty)
+ (depends (lwt_ssl (= 1.2.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-x509)
+ (allow_empty)
+ (depends (x509 (= 0.16.5))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-hex)
+ (allow_empty)
+ (depends (hex (= 1.5.0))))

@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-cohttp-lwt-unix)
+ (allow_empty)
+ (depends (cohttp-lwt-unix (= 6.0.0~beta2))))

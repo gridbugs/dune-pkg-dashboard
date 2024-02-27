@@ -1,0 +1,5 @@
+(lang dune 3.14)
+(package
+ (name depends-on-pecu)
+ (allow_empty)
+ (depends (pecu (= 0.6))))
