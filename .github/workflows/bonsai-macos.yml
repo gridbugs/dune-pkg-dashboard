@@ -42,7 +42,7 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
       - name: Build Dune
         run: |
-          git clone https://github.com/github/dune.git
+          git clone https://github.com/gridbugs/dune.git
           cd dune
           git checkout ${{ matrix.dune-revision }}
           opam install .
